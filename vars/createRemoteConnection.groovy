@@ -27,6 +27,7 @@ def call(env, params) {
           keyFileVariable: 'KEY_FILE',
           usernameVariable: 'USERNAME',
         )]) {
+          REMOTE.port = value.get('port', 22);
           REMOTE.user = USERNAME;
           REMOTE.identity = sh(
             script: "cat $KEY_FILE",
